@@ -314,7 +314,7 @@ This should be emotionally strong.
 
 ### Header
 
-**Someone You Love Deserves to Hear This**
+**Someone you love or appreciate Deserves to Hear This**
 
 ### Copy
 

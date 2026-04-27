@@ -149,7 +149,7 @@ You complete a guided questionnaire with the real stories and details that make 
 
 ## 9. Final CTA
 
-# Someone you love deserves to hear what they mean to you.
+# Someone you love or appreciate deserves to hear what they mean to you.
 
 For the living.  
 For the passed on.  
