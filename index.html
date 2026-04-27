@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soul Slams by D. Votino | Honor Them Out Loud</title>
+    <meta name="description" content="Custom 10-15 minute spoken-word tributes with original music. Created to honor someone you love while they're here to hear it.">
+    <meta name="keywords" content="spoken word, tribute, memorial, birthday gift, custom music, personalized poem">
+    <meta property="og:title" content="Soul Slams by D. Votino | Honor Them Out Loud">
+    <meta property="og:description" content="Custom spoken-word tributes with original music. Say the sacred thing before it's too late.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://0xwhisperer.github.io/soulslams/">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎙️</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,28 +72,179 @@
             0% { height: 20%; }
             100% { height: 100%; }
         }
+        /* Grain texture overlay */
+        .grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+        /* Smooth FAQ animation */
+        details[open] summary ~ * {
+            animation: slideDown 0.3s ease-in-out;
+        }
+        @keyframes slideDown {
+            0% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        /* Button press state */
+        .btn-press:active {
+            transform: scale(0.98);
+        }
+        /* Link underline animation */
+        .link-hover {
+            position: relative;
+        }
+        .link-hover::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: width 0.3s ease;
+        }
+        .link-hover:hover::after {
+            width: 100%;
+        }
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 3rem;
+            height: 3rem;
+            background: #d4a574;
+            color: #1a1428;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .scroll-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .scroll-top:hover {
+            background: #c9a87c;
+            transform: translateY(-2px);
+        }
+        /* Process connector line */
+        @media (min-width: 768px) {
+            .process-connector::before {
+                content: '';
+                position: absolute;
+                top: 2rem;
+                left: 50%;
+                right: -50%;
+                height: 2px;
+                background: linear-gradient(90deg, #d4a574 0%, transparent 100%);
+                z-index: 0;
+            }
+        }
+        /* Waveform animation */
+        @keyframes waveform {
+            0%, 100% { transform: scaleY(0.5); }
+            50% { transform: scaleY(1); }
+        }
+        .waveform-bar {
+            animation: waveform 1s ease-in-out infinite;
+        }
+        .waveform-bar:nth-child(2) { animation-delay: 0.1s; }
+        .waveform-bar:nth-child(3) { animation-delay: 0.2s; }
+        .waveform-bar:nth-child(4) { animation-delay: 0.3s; }
+        .waveform-bar:nth-child(5) { animation-delay: 0.4s; }
     </style>
 </head>
 <body class="bg-soul-cream text-soul-deep font-sans antialiased">
+    <!-- Grain texture overlay -->
+    <div class="grain"></div>
+    
+    <!-- Scroll to top button -->
+    <div class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+        </svg>
+    </div>
     
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-soul-cream/90 backdrop-blur-md border-b border-soul-gold/20">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#hero" class="font-serif text-xl italic text-soul-deep">Soul Slams</a>
+            <a href="#hero" class="font-serif text-xl italic text-soul-deep link-hover">Soul Slams</a>
+            <!-- Desktop Nav -->
             <div class="hidden md:flex gap-8 text-sm font-medium">
-                <a href="#what" class="hover:text-soul-gold transition-colors">What It Is</a>
-                <a href="#samples" class="hover:text-soul-gold transition-colors">Samples</a>
-                <a href="#how" class="hover:text-soul-gold transition-colors">How It Works</a>
-                <a href="#occasions" class="hover:text-soul-gold transition-colors">Occasions</a>
-                <a href="#pricing" class="hover:text-soul-gold transition-colors">Pricing</a>
+                <a href="#what" class="link-hover hover:text-soul-gold transition-colors">What It Is</a>
+                <a href="#samples" class="link-hover hover:text-soul-gold transition-colors">Samples</a>
+                <a href="#how" class="link-hover hover:text-soul-gold transition-colors">How It Works</a>
+                <a href="#occasions" class="link-hover hover:text-soul-gold transition-colors">Occasions</a>
+                <a href="#pricing" class="link-hover hover:text-soul-gold transition-colors">Pricing</a>
             </div>
-            <a href="#create" class="bg-soul-deep text-soul-cream px-5 py-2 text-sm font-medium hover:bg-soul-purple transition-colors">Create a Soul Slam</a>
+            <div class="flex items-center gap-4">
+                <a href="#create" class="hidden sm:block bg-soul-deep text-soul-cream px-5 py-2 text-sm font-medium hover:bg-soul-purple transition-colors btn-press">Create a Soul Slam</a>
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 text-soul-deep" aria-label="Open menu">
+                    <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                    <svg id="closeIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-soul-cream border-t border-soul-gold/20">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#what" class="block text-soul-deep hover:text-soul-gold transition-colors">What It Is</a>
+                <a href="#samples" class="block text-soul-deep hover:text-soul-gold transition-colors">Samples</a>
+                <a href="#how" class="block text-soul-deep hover:text-soul-gold transition-colors">How It Works</a>
+                <a href="#occasions" class="block text-soul-deep hover:text-soul-gold transition-colors">Occasions</a>
+                <a href="#pricing" class="block text-soul-deep hover:text-soul-gold transition-colors">Pricing</a>
+                <a href="#create" class="block bg-soul-deep text-soul-cream px-5 py-3 text-center font-medium">Create a Soul Slam</a>
+            </div>
         </div>
     </nav>
 
     <!-- Hero -->
     <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
         <div class="absolute inset-0 hero-glow"></div>
+        <!-- Animated waveform background -->
+        <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+            <div class="flex items-center gap-1 h-32">
+                <div class="w-1 bg-soul-gold waveform-bar" style="height: 40%"></div>
+                <div class="w-1 bg-soul-gold waveform-bar" style="height: 60%"></div>
+                <div class="w-1 bg-soul-gold waveform-bar" style="height: 80%"></div>
+                <div class="w-1 bg-soul-gold waveform-bar" style="height: 50%"></div>
+                <div class="w-1 bg-soul-gold waveform-bar" style="height: 90%"></div>
+                <div class="w-1 bg-soul-gold waveform-bar" style="height: 70%"></div>
+                <div class="w-1 bg-soul-gold waveform-bar" style="height: 100%"></div>
+                <div class="w-1 bg-soul-gold waveform-bar" style="height: 60%"></div>
+                <div class="w-1 bg-soul-gold waveform-bar" style="height: 80%"></div>
+                <div class="w-1 bg-soul-gold waveform-bar" style="height: 40%"></div>
+                <div class="w-1 bg-soul-gold waveform-bar" style="height: 90%"></div>
+                <div class="w-1 bg-soul-gold waveform-bar" style="height: 50%"></div>
+                <div class="w-1 bg-soul-gold waveform-bar" style="height: 70%"></div>
+                <div class="w-1 bg-soul-gold waveform-bar" style="height: 60%"></div>
+                <div class="w-1 bg-soul-gold waveform-bar" style="height: 80%"></div>
+                <div class="w-1 bg-soul-gold waveform-bar" style="height: 40%"></div>
+                <div class="w-1 bg-soul-gold waveform-bar" style="height: 90%"></div>
+                <div class="w-1 bg-soul-gold waveform-bar" style="height: 50%"></div>
+                <div class="w-1 bg-soul-gold waveform-bar" style="height: 70%"></div>
+                <div class="w-1 bg-soul-gold waveform-bar" style="height: 60%"></div>
+            </div>
+        </div>
         <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
             <p class="text-soul-gold text-sm uppercase tracking-[0.3em] mb-6">Custom Spoken-Word Tributes</p>
             <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-semibold mb-4 leading-tight">
@@ -98,10 +256,10 @@
                 Custom 10–15 minute spoken-word tributes with original music, created to honor someone living or passed on.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#create" class="bg-soul-deep text-soul-cream px-8 py-4 text-lg font-medium hover:bg-soul-purple transition-all transform hover:scale-105">
+                <a href="#create" class="bg-soul-deep text-soul-cream px-8 py-4 text-lg font-medium hover:bg-soul-purple transition-all transform hover:scale-105 btn-press shadow-lg shadow-soul-deep/20">
                     Create a Soul Slam
                 </a>
-                <a href="#samples" class="border-2 border-soul-deep text-soul-deep px-8 py-4 text-lg font-medium hover:bg-soul-deep hover:text-soul-cream transition-all">
+                <a href="#samples" class="border-2 border-soul-deep text-soul-deep px-8 py-4 text-lg font-medium hover:bg-soul-deep hover:text-soul-cream transition-all btn-press">
                     Hear a Sample
                 </a>
             </div>
@@ -274,20 +432,21 @@
     <!-- How It Works -->
     <section id="how" class="py-24 bg-soul-warm section-fade">
         <div class="max-w-5xl mx-auto px-6">
-            <h2 class="font-serif text-4xl md:text-5xl text-center mb-16">How It Works</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-soul-deep text-soul-cream flex items-center justify-center font-serif text-2xl">1</div>
+            <h2 class="font-serif text-4xl md:text-5xl text-center mb-4">How It Works</h2>
+            <p class="text-center text-soul-deep/60 mb-16 max-w-xl mx-auto">Three simple steps to a timeless tribute</p>
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <div class="process-connector relative text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-soul-deep text-soul-cream flex items-center justify-center font-serif text-2xl relative z-10 shadow-lg shadow-soul-deep/30">1</div>
                     <h3 class="font-serif text-2xl mb-4">Tell us about them</h3>
                     <p class="text-soul-deep/70 leading-relaxed">You complete a guided questionnaire with stories, memories, personality details, birthday, sayings, quirks, and emotional themes.</p>
                 </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-soul-deep text-soul-cream flex items-center justify-center font-serif text-2xl">2</div>
+                <div class="process-connector relative text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-soul-deep text-soul-cream flex items-center justify-center font-serif text-2xl relative z-10 shadow-lg shadow-soul-deep/30">2</div>
                     <h3 class="font-serif text-2xl mb-4">We create the Soul Slam</h3>
                     <p class="text-soul-deep/70 leading-relaxed">D. Votino writes the spoken-word tribute and creates original music in the style you choose.</p>
                 </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-soul-deep text-soul-cream flex items-center justify-center font-serif text-2xl">3</div>
+                <div class="relative text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-soul-deep text-soul-cream flex items-center justify-center font-serif text-2xl relative z-10 shadow-lg shadow-soul-deep/30">3</div>
                     <h3 class="font-serif text-2xl mb-4">You receive the piece</h3>
                     <p class="text-soul-deep/70 leading-relaxed">You get a polished audio tribute to play, gift, share, or keep forever.</p>
                 </div>
@@ -362,8 +521,8 @@
                 </div>
             </div>
             <div class="text-center mt-12">
-                <a href="#create" class="inline-block bg-soul-gold text-soul-deep px-8 py-4 text-lg font-medium hover:bg-soul-accent transition-colors">
-                    Request Pricing
+                <a href="#create" class="inline-block bg-soul-gold text-soul-deep px-10 py-5 text-lg font-medium hover:bg-soul-accent transition-all transform hover:scale-105 btn-press shadow-lg shadow-soul-gold/30">
+                    Get Your Quote
                 </a>
             </div>
         </div>
@@ -447,6 +606,27 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        const closeIcon = document.getElementById('closeIcon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -459,6 +639,16 @@
                     });
                 }
             });
+        });
+
+        // Scroll to top button visibility
+        const scrollTopBtn = document.querySelector('.scroll-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
         });
 
         // Intersection Observer for fade-in animations
