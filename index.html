@@ -332,11 +332,11 @@
             <h2 class="font-serif text-5xl md:text-6xl lg:text-7xl text-center mb-6">Hear Samples</h2>
             <p class="text-soul-cream/60 text-center mb-16 max-w-2xl mx-auto text-xl md:text-2xl">Listen to a few featured excerpts and experience the emotional range of a Soul Slam.</p>
             
-            <div class="grid md:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Sample 1 -->
                 <div class="bg-soul-purple/50 p-8 rounded-lg border border-soul-gold/20 hover:border-soul-gold/40 transition-all cursor-pointer group" onclick="playSample(this, 'tender')" title="Double-click to restart">
                     <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 rounded-full bg-soul-gold/20 flex items-center justify-center group-hover:bg-soul-gold/30 transition-all">
+                        <div class="w-14 h-14 min-w-[3.5rem] rounded-full bg-soul-gold/20 flex items-center justify-center group-hover:bg-soul-gold/30 transition-all flex-shrink-0">
                             <svg class="w-6 h-6 text-soul-gold play-icon" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M6.3 5.84a.5.5 0 0 1 .77-.42l7.56 4.16a.5.5 0 0 1 0 .84L7.07 14.58a.5.5 0 0 1-.77-.42V5.84z"/>
                             </svg>
@@ -359,7 +359,7 @@
                 <!-- Sample 2 -->
                 <div class="bg-soul-purple/50 p-8 rounded-lg border border-soul-gold/20 hover:border-soul-gold/40 transition-all cursor-pointer group" onclick="playSample(this, 'sacred')" title="Double-click to restart">
                     <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 rounded-full bg-soul-gold/20 flex items-center justify-center group-hover:bg-soul-gold/30 transition-all">
+                        <div class="w-14 h-14 min-w-[3.5rem] rounded-full bg-soul-gold/20 flex items-center justify-center group-hover:bg-soul-gold/30 transition-all flex-shrink-0">
                             <svg class="w-6 h-6 text-soul-gold play-icon" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M6.3 5.84a.5.5 0 0 1 .77-.42l7.56 4.16a.5.5 0 0 1 0 .84L7.07 14.58a.5.5 0 0 1-.77-.42V5.84z"/>
                             </svg>
@@ -382,7 +382,7 @@
                 <!-- Sample 3 -->
                 <div class="bg-soul-purple/50 p-8 rounded-lg border border-soul-gold/20 hover:border-soul-gold/40 transition-all cursor-pointer group" onclick="playSample(this, 'warm')" title="Double-click to restart">
                     <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 rounded-full bg-soul-gold/20 flex items-center justify-center group-hover:bg-soul-gold/30 transition-all">
+                        <div class="w-14 h-14 min-w-[3.5rem] rounded-full bg-soul-gold/20 flex items-center justify-center group-hover:bg-soul-gold/30 transition-all flex-shrink-0">
                             <svg class="w-6 h-6 text-soul-gold play-icon" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M6.3 5.84a.5.5 0 0 1 .77-.42l7.56 4.16a.5.5 0 0 1 0 .84L7.07 14.58a.5.5 0 0 1-.77-.42V5.84z"/>
                             </svg>
@@ -400,6 +400,29 @@
                     <p class="text-soul-gold text-base mb-2">Featured Sample</p>
                     <p class="text-soul-cream/70 text-lg leading-relaxed mb-4">An intimate spoken-word tribute woven from meaningful details, affection, and heartfelt presence.</p>
                     <p class="text-soul-cream/50 text-base">1:08</p>
+                </div>
+
+                <!-- Sample 4 -->
+                <div class="bg-soul-purple/50 p-8 rounded-lg border border-soul-gold/20 hover:border-soul-gold/40 transition-all cursor-pointer group" onclick="playSample(this, 'faith')" title="Double-click to restart">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 min-w-[3.5rem] rounded-full bg-soul-gold/20 flex items-center justify-center group-hover:bg-soul-gold/30 transition-all flex-shrink-0">
+                            <svg class="w-6 h-6 text-soul-gold play-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M6.3 5.84a.5.5 0 0 1 .77-.42l7.56 4.16a.5.5 0 0 1 0 .84L7.07 14.58a.5.5 0 0 1-.77-.42V5.84z"/>
+                            </svg>
+                            <div class="equalizer hidden flex gap-1 h-5 items-end">
+                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0s; height: 40%"></div>
+                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.1s; height: 70%"></div>
+                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.2s; height: 50%"></div>
+                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.3s; height: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-2xl">Faith & Devotion</h3>
+                        </div>
+                    </div>
+                    <p class="text-soul-gold text-base mb-2">Featured Sample</p>
+                    <p class="text-soul-cream/70 text-lg leading-relaxed mb-4">A reverent spoken-word tribute shaped by faith, gratitude, and the quiet strength of a life guided by something greater.</p>
+                    <p class="text-soul-cream/50 text-base">10:38</p>
                 </div>
             </div>
         </div>
@@ -1032,12 +1055,14 @@
 
         // Audio sample player
         let currentlyPlaying = null;
+        let currentType = null;
         let audioElements = {};
         let currentTimeout = null;
         let lastClickTime = {};
 
         const sampleAudio = {
-            sacred: 'Memra.mp3'
+            sacred: 'Memra.mp3',
+            faith: 'Kevin.mp3'
         };
 
         function stopCard(el) {
@@ -1069,8 +1094,10 @@
             // Stop currently playing if different
             if (currentlyPlaying && currentlyPlaying !== element) {
                 stopCard(currentlyPlaying);
-                if (audioElements[type]) { audioElements[type].pause(); }
+                if (currentType && audioElements[currentType]) { audioElements[currentType].pause(); }
                 if (currentTimeout) { clearTimeout(currentTimeout); currentTimeout = null; }
+                currentlyPlaying = null;
+                currentType = null;
             }
 
             if (element.classList.contains('playing')) {
@@ -1079,12 +1106,14 @@
                 if (audioElements[type]) { audioElements[type].pause(); }
                 if (currentTimeout) { clearTimeout(currentTimeout); currentTimeout = null; }
                 currentlyPlaying = null;
+                currentType = null;
             } else {
                 // Play or resume
                 playIcon.classList.add('hidden');
                 equalizer.classList.remove('hidden');
                 element.classList.add('playing');
                 currentlyPlaying = element;
+                currentType = type;
 
                 if (sampleAudio[type]) {
                     if (!audioElements[type]) {
