@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soul Slams by D. Votino | Honor Them Out Loud</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'soul-deep': '#1a1428',
+                        'soul-purple': '#2d1f4b',
+                        'soul-gold': '#d4a574',
+                        'soul-cream': '#faf8f5',
+                        'soul-warm': '#f5ebe0',
+                        'soul-accent': '#c9a87c',
+                    },
+                    fontFamily: {
+                        'serif': ['Cormorant Garamond', 'Georgia', 'serif'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #d4a574 0%, #c9a87c 50%, #a08060 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-glow {
+            background: radial-gradient(ellipse at center, rgba(212, 165, 116, 0.15) 0%, transparent 70%);
+        }
+        .waveform {
+            background: linear-gradient(90deg, #d4a574 0%, transparent 100%);
+            animation: wave 2s ease-in-out infinite;
+        }
+        @keyframes wave {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+        .section-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .section-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .audio-bar {
+            transition: height 0.1s ease;
+        }
+        .playing .audio-bar {
+            animation: equalize 0.5s ease-in-out infinite alternate;
+        }
+        @keyframes equalize {
+            0% { height: 20%; }
+            100% { height: 100%; }
+        }
+    </style>
+</head>
+<body class="bg-soul-cream text-soul-deep font-sans antialiased">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-soul-cream/90 backdrop-blur-md border-b border-soul-gold/20">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="font-serif text-xl italic text-soul-deep">Soul Slams</a>
+            <div class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="#what" class="hover:text-soul-gold transition-colors">What It Is</a>
+                <a href="#samples" class="hover:text-soul-gold transition-colors">Samples</a>
+                <a href="#how" class="hover:text-soul-gold transition-colors">How It Works</a>
+                <a href="#occasions" class="hover:text-soul-gold transition-colors">Occasions</a>
+                <a href="#pricing" class="hover:text-soul-gold transition-colors">Pricing</a>
+            </div>
+            <a href="#create" class="bg-soul-deep text-soul-cream px-5 py-2 text-sm font-medium hover:bg-soul-purple transition-colors">Create a Soul Slam</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <div class="absolute inset-0 hero-glow"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <p class="text-soul-gold text-sm uppercase tracking-[0.3em] mb-6">Custom Spoken-Word Tributes</p>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-semibold mb-4 leading-tight">
+                Soul Slams
+                <span class="block text-2xl md:text-3xl lg:text-4xl italic font-normal mt-2 text-soul-deep/80">by D. Votino</span>
+            </h1>
+            <p class="font-serif text-2xl md:text-3xl italic gradient-text mb-8">Honor Them Out Loud</p>
+            <p class="text-lg md:text-xl text-soul-deep/70 max-w-2xl mx-auto mb-12 leading-relaxed">
+                Custom 10–15 minute spoken-word tributes with original music, created to honor someone living or passed on.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#create" class="bg-soul-deep text-soul-cream px-8 py-4 text-lg font-medium hover:bg-soul-purple transition-all transform hover:scale-105">
+                    Create a Soul Slam
+                </a>
+                <a href="#samples" class="border-2 border-soul-deep text-soul-deep px-8 py-4 text-lg font-medium hover:bg-soul-deep hover:text-soul-cream transition-all">
+                    Hear a Sample
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-soul-cream to-transparent"></div>
+    </section>
+
+    <!-- What Is a Soul Slam? -->
+    <section id="what" class="py-24 section-fade">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="font-serif text-4xl md:text-5xl mb-8">What Is a Soul Slam?</h2>
+            <p class="text-lg md:text-xl text-soul-deep/80 leading-relaxed mb-6 max-w-3xl mx-auto">
+                A Soul Slam is a custom spoken-word tribute set to original music. It honors a person's story, humor, struggles, love, and legacy.
+            </p>
+            <p class="font-serif text-2xl md:text-3xl italic text-soul-gold">
+                Not a roast. Not a résumé. A remembrance.
+            </p>
+        </div>
+    </section>
+
+    <!-- Hear a Sample -->
+    <section id="samples" class="py-24 bg-soul-deep text-soul-cream section-fade">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="font-serif text-4xl md:text-5xl text-center mb-4">Hear a Sample</h2>
+            <p class="text-soul-cream/60 text-center mb-16 max-w-xl mx-auto">Experience the power of spoken word woven with original music</p>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Sample 1 -->
+                <div class="bg-soul-purple/50 p-6 rounded-lg border border-soul-gold/20 hover:border-soul-gold/40 transition-all cursor-pointer group" onclick="playSample(this, 'living')">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-soul-gold/20 flex items-center justify-center group-hover:bg-soul-gold/30 transition-all">
+                            <svg class="w-5 h-5 text-soul-gold play-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M6.3 5.84a.5.5 0 0 1 .77-.42l7.56 4.16a.5.5 0 0 1 0 .84L7.07 14.58a.5.5 0 0 1-.77-.42V5.84z"/>
+                            </svg>
+                            <div class="equalizer hidden flex gap-1 h-4 items-end">
+                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0s; height: 40%"></div>
+                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.1s; height: 70%"></div>
+                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.2s; height: 50%"></div>
+                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.3s; height: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-xl">For the Living</h3>
+                            <p class="text-sm text-soul-cream/60">Birthday, anniversary, retirement</p>
+                        </div>
+                    </div>
+                    <p class="text-soul-cream/70 text-sm">A warm celebration of a life still unfolding—filled with humor, love, and appreciation.</p>
+                </div>
+
+                <!-- Sample 2 -->
+                <div class="bg-soul-purple/50 p-6 rounded-lg border border-soul-gold/20 hover:border-soul-gold/40 transition-all cursor-pointer group" onclick="playSample(this, 'memorial')">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-soul-gold/20 flex items-center justify-center group-hover:bg-soul-gold/30 transition-all">
+                            <svg class="w-5 h-5 text-soul-gold play-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M6.3 5.84a.5.5 0 0 1 .77-.42l7.56 4.16a.5.5 0 0 1 0 .84L7.07 14.58a.5.5 0 0 1-.77-.42V5.84z"/>
+                            </svg>
+                            <div class="equalizer hidden flex gap-1 h-4 items-end">
+                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0s; height: 40%"></div>
+                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.1s; height: 70%"></div>
+                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.2s; height: 50%"></div>
+                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.3s; height: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-xl">For the Passed On</h3>
+                            <p class="text-sm text-soul-cream/60">Memorial, celebration of life</p>
+                        </div>
+                    </div>
+                    <p class="text-soul-cream/70 text-sm">A sacred remembrance—honoring memory, legacy, and the love that remains.</p>
+                </div>
+
+                <!-- Sample 3 -->
+                <div class="bg-soul-purple/50 p-6 rounded-lg border border-soul-gold/20 hover:border-soul-gold/40 transition-all cursor-pointer group" onclick="playSample(this, 'playful')">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-soul-gold/20 flex items-center justify-center group-hover:bg-soul-gold/30 transition-all">
+                            <svg class="w-5 h-5 text-soul-gold play-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M6.3 5.84a.5.5 0 0 1 .77-.42l7.56 4.16a.5.5 0 0 1 0 .84L7.07 14.58a.5.5 0 0 1-.77-.42V5.84z"/>
+                            </svg>
+                            <div class="equalizer hidden flex gap-1 h-4 items-end">
+                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0s; height: 40%"></div>
+                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.1s; height: 70%"></div>
+                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.2s; height: 50%"></div>
+                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.3s; height: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-xl">For the Playful Ones</h3>
+                            <p class="text-sm text-soul-cream/60">Funny, warm, personal</p>
+                        </div>
+                    </div>
+                    <p class="text-soul-cream/70 text-sm">Humor and heart, perfectly balanced—celebrating quirks and inside jokes with love.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For -->
+    <section id="occasions" class="py-24 section-fade">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="font-serif text-4xl md:text-5xl text-center mb-16">Who It's For</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-soul-gold/10 text-center hover:shadow-md hover:border-soul-gold/30 transition-all">
+                    <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-soul-warm flex items-center justify-center">
+                        <svg class="w-5 h-5 text-soul-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-medium">Birthdays</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-soul-gold/10 text-center hover:shadow-md hover:border-soul-gold/30 transition-all">
+                    <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-soul-warm flex items-center justify-center">
+                        <svg class="w-5 h-5 text-soul-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-medium">Memorials</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-soul-gold/10 text-center hover:shadow-md hover:border-soul-gold/30 transition-all">
+                    <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-soul-warm flex items-center justify-center">
+                        <svg class="w-5 h-5 text-soul-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-medium">Anniversaries</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-soul-gold/10 text-center hover:shadow-md hover:border-soul-gold/30 transition-all">
+                    <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-soul-warm flex items-center justify-center">
+                        <svg class="w-5 h-5 text-soul-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-medium">Retirements</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-soul-gold/10 text-center hover:shadow-md hover:border-soul-gold/30 transition-all">
+                    <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-soul-warm flex items-center justify-center">
+                        <svg class="w-5 h-5 text-soul-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-medium">Weddings</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-soul-gold/10 text-center hover:shadow-md hover:border-soul-gold/30 transition-all">
+                    <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-soul-warm flex items-center justify-center">
+                        <svg class="w-5 h-5 text-soul-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-medium">Friendship</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-soul-gold/10 text-center hover:shadow-md hover:border-soul-gold/30 transition-all">
+                    <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-soul-warm flex items-center justify-center">
+                        <svg class="w-5 h-5 text-soul-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-medium">Family Legacy</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-soul-gold/10 text-center hover:shadow-md hover:border-soul-gold/30 transition-all">
+                    <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-soul-warm flex items-center justify-center">
+                        <svg class="w-5 h-5 text-soul-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-medium">Beloved Pets</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how" class="py-24 bg-soul-warm section-fade">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="font-serif text-4xl md:text-5xl text-center mb-16">How It Works</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-soul-deep text-soul-cream flex items-center justify-center font-serif text-2xl">1</div>
+                    <h3 class="font-serif text-2xl mb-4">Tell us about them</h3>
+                    <p class="text-soul-deep/70 leading-relaxed">You complete a guided questionnaire with stories, memories, personality details, birthday, sayings, quirks, and emotional themes.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-soul-deep text-soul-cream flex items-center justify-center font-serif text-2xl">2</div>
+                    <h3 class="font-serif text-2xl mb-4">We create the Soul Slam</h3>
+                    <p class="text-soul-deep/70 leading-relaxed">D. Votino writes the spoken-word tribute and creates original music in the style you choose.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-soul-deep text-soul-cream flex items-center justify-center font-serif text-2xl">3</div>
+                    <h3 class="font-serif text-2xl mb-4">You receive the piece</h3>
+                    <p class="text-soul-deep/70 leading-relaxed">You get a polished audio tribute to play, gift, share, or keep forever.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Choose the Feeling -->
+    <section class="py-24 section-fade">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="font-serif text-4xl md:text-5xl text-center mb-6">Choose the Feeling</h2>
+            <p class="text-center text-soul-deep/60 mb-12">A Soul Slam can be...</p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="px-5 py-2 bg-soul-deep text-soul-cream rounded-full text-sm font-medium">Sacred</span>
+                <span class="px-5 py-2 bg-soul-deep text-soul-cream rounded-full text-sm font-medium">Funny</span>
+                <span class="px-5 py-2 bg-soul-deep text-soul-cream rounded-full text-sm font-medium">Tender</span>
+                <span class="px-5 py-2 bg-soul-deep text-soul-cream rounded-full text-sm font-medium">Fierce</span>
+                <span class="px-5 py-2 bg-soul-deep text-soul-cream rounded-full text-sm font-medium">Mystical</span>
+                <span class="px-5 py-2 bg-soul-deep text-soul-cream rounded-full text-sm font-medium">Cinematic</span>
+                <span class="px-5 py-2 bg-soul-deep text-soul-cream rounded-full text-sm font-medium">Soulful</span>
+                <span class="px-5 py-2 bg-soul-gold text-soul-deep rounded-full text-sm font-medium">Gospel</span>
+                <span class="px-5 py-2 bg-soul-gold text-soul-deep rounded-full text-sm font-medium">Hip-hop</span>
+                <span class="px-5 py-2 bg-soul-gold text-soul-deep rounded-full text-sm font-medium">Acoustic</span>
+                <span class="px-5 py-2 bg-soul-gold text-soul-deep rounded-full text-sm font-medium">Ambient</span>
+                <span class="px-5 py-2 bg-soul-gold text-soul-deep rounded-full text-sm font-medium">Country</span>
+                <span class="px-5 py-2 bg-soul-gold text-soul-deep rounded-full text-sm font-medium">Jazz</span>
+                <span class="px-5 py-2 border-2 border-soul-deep rounded-full text-sm font-medium">Custom blend</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages -->
+    <section id="pricing" class="py-24 bg-soul-deep text-soul-cream section-fade">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="font-serif text-4xl md:text-5xl text-center mb-16">Packages</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-soul-purple/50 p-8 rounded-lg border border-soul-gold/20">
+                    <h3 class="font-serif text-2xl mb-2">Essential</h3>
+                    <p class="text-soul-cream/60 text-sm mb-4">Shorter tribute</p>
+                    <p class="text-soul-cream/80 mb-6">Perfect for intimate gifts and smaller occasions.</p>
+                    <div class="h-px bg-soul-gold/20 mb-6"></div>
+                    <ul class="text-sm text-soul-cream/70 space-y-2">
+                        <li>• 5-7 minutes</li>
+                        <li>• Spoken word tribute</li>
+                        <li>• Simple musical bed</li>
+                    </ul>
+                </div>
+                <div class="bg-soul-gold/20 p-8 rounded-lg border-2 border-soul-gold relative">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-soul-gold text-soul-deep px-4 py-1 text-xs font-medium rounded-full">Most Popular</div>
+                    <h3 class="font-serif text-2xl mb-2">Signature</h3>
+                    <p class="text-soul-cream/60 text-sm mb-4">10–15 minute tribute</p>
+                    <p class="text-soul-cream/80 mb-6">Best for most occasions—birthdays, anniversaries, retirements.</p>
+                    <div class="h-px bg-soul-gold/30 mb-6"></div>
+                    <ul class="text-sm text-soul-cream/70 space-y-2">
+                        <li>• 10-15 minutes</li>
+                        <li>• Full spoken-word piece</li>
+                        <li>• Original music</li>
+                        <li>• Your choice of style</li>
+                    </ul>
+                </div>
+                <div class="bg-soul-purple/50 p-8 rounded-lg border border-soul-gold/20">
+                    <h3 class="font-serif text-2xl mb-2">Legacy</h3>
+                    <p class="text-soul-cream/60 text-sm mb-4">Deeper tribute</p>
+                    <p class="text-soul-cream/80 mb-6">For memorials, elders, family legacy, or major ceremonies.</p>
+                    <div class="h-px bg-soul-gold/20 mb-6"></div>
+                    <ul class="text-sm text-soul-cream/70 space-y-2">
+                        <li>• 15-20 minutes</li>
+                        <li>• Extended spoken-word</li>
+                        <li>• Rich musical composition</li>
+                        <li>• Premium production</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#create" class="inline-block bg-soul-gold text-soul-deep px-8 py-4 text-lg font-medium hover:bg-soul-accent transition-colors">
+                    Request Pricing
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 section-fade">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="font-serif text-4xl md:text-5xl text-center mb-16">FAQ</h2>
+            <div class="space-y-4">
+                <details class="bg-white rounded-lg shadow-sm border border-soul-gold/10 group">
+                    <summary class="p-6 cursor-pointer font-medium flex justify-between items-center list-none">
+                        Is it a roast?
+                        <span class="text-soul-gold group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <p class="px-6 pb-6 text-soul-deep/70">No. It can be funny, but it is meant to honor, not embarrass.</p>
+                </details>
+                <details class="bg-white rounded-lg shadow-sm border border-soul-gold/10 group">
+                    <summary class="p-6 cursor-pointer font-medium flex justify-between items-center list-none">
+                        Can it be for someone who has passed?
+                        <span class="text-soul-gold group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <p class="px-6 pb-6 text-soul-deep/70">Yes. Many Soul Slams are created as memorials and celebrations of life.</p>
+                </details>
+                <details class="bg-white rounded-lg shadow-sm border border-soul-gold/10 group">
+                    <summary class="p-6 cursor-pointer font-medium flex justify-between items-center list-none">
+                        Can it be for someone living?
+                        <span class="text-soul-gold group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <p class="px-6 pb-6 text-soul-deep/70">Yes. Birthdays, retirements, anniversaries—any occasion to honor someone still with us.</p>
+                </details>
+                <details class="bg-white rounded-lg shadow-sm border border-soul-gold/10 group">
+                    <summary class="p-6 cursor-pointer font-medium flex justify-between items-center list-none">
+                        Can I choose the music style?
+                        <span class="text-soul-gold group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <p class="px-6 pb-6 text-soul-deep/70">Yes. From gospel to hip-hop to jazz and everything in between—or a custom blend unique to them.</p>
+                </details>
+                <details class="bg-white rounded-lg shadow-sm border border-soul-gold/10 group">
+                    <summary class="p-6 cursor-pointer font-medium flex justify-between items-center list-none">
+                        How do you write about someone you don't know?
+                        <span class="text-soul-gold group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <p class="px-6 pb-6 text-soul-deep/70">You complete a guided questionnaire with the real stories and details that make them unmistakably themselves.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="create" class="py-32 bg-soul-deep text-soul-cream relative overflow-hidden section-fade">
+        <div class="absolute inset-0 hero-glow opacity-50"></div>
+        <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+            <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl mb-8 leading-tight">
+                Someone you love deserves to hear what they mean to you.
+            </h2>
+            <p class="text-xl md:text-2xl text-soul-cream/70 mb-4 font-serif italic">
+                For the living.<br>
+                For the passed on.<br>
+                For the love that remains.
+            </p>
+            <div class="mt-12">
+                <a href="mailto:contact@soulslams.com" class="inline-block bg-soul-gold text-soul-deep px-10 py-5 text-xl font-medium hover:bg-soul-accent transition-all transform hover:scale-105">
+                    Create a Soul Slam
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-soul-deep border-t border-soul-gold/20 py-12 text-soul-cream/60">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="font-serif text-xl italic text-soul-cream">Soul Slams by D. Votino</div>
+            <div class="text-sm">
+                Honor Them Out Loud
+            </div>
+            <div class="text-sm">
+                contact@soulslams.com
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-fade').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Audio sample player simulation
+        let currentlyPlaying = null;
+
+        function playSample(element, type) {
+            const playIcon = element.querySelector('.play-icon');
+            const equalizer = element.querySelector('.equalizer');
+            
+            // Stop currently playing if different
+            if (currentlyPlaying && currentlyPlaying !== element) {
+                const oldIcon = currentlyPlaying.querySelector('.play-icon');
+                const oldEqualizer = currentlyPlaying.querySelector('.equalizer');
+                oldIcon.classList.remove('hidden');
+                oldEqualizer.classList.add('hidden');
+                currentlyPlaying.classList.remove('playing');
+            }
+            
+            if (element.classList.contains('playing')) {
+                // Pause
+                playIcon.classList.remove('hidden');
+                equalizer.classList.add('hidden');
+                element.classList.remove('playing');
+                currentlyPlaying = null;
+            } else {
+                // Play
+                playIcon.classList.add('hidden');
+                equalizer.classList.remove('hidden');
+                element.classList.add('playing');
+                currentlyPlaying = element;
+                
+                // Auto-stop after simulated duration
+                setTimeout(() => {
+                    if (currentlyPlaying === element) {
+                        playIcon.classList.remove('hidden');
+                        equalizer.classList.add('hidden');
+                        element.classList.remove('playing');
+                        currentlyPlaying = null;
+                    }
+                }, 30000); // 30 seconds
+            }
+        }
+    </script>
+</body>
+</html>
