@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soul Slams by D. Votino | Honor Them While They're Still Here</title>
+    <title>Soul, Spoken by D. Votino | Honor Them While They're Still Here</title>
     <meta name="description" content="Custom 10-15 minute spoken-word tributes with original music. Created to honor someone you love or wish to recognize  while they're here to hear it.">
     <meta name="keywords" content="spoken word, tribute, memorial, birthday gift, custom music, personalized poem">
     <!-- Open Graph / Facebook / Messenger / LinkedIn -->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Soul Slams">
+    <meta property="og:site_name" content="Soul, Spoken">
     <meta property="og:url" content="https://0xwhisperer.github.io/soulslams/">
-    <meta property="og:title" content="Soul Slams by D. Votino | Honor Them While They're Still Here">
+    <meta property="og:title" content="Soul, Spoken by D. Votino | Honor Them While They're Still Here">
     <meta property="og:description" content="Professionally produced custom spoken-word tributes with music. Say the sacred thing before it's too late.">
     <meta property="og:image" content="https://0xwhisperer.github.io/soulslams/SSOG.jpg">
     <meta property="og:image:secure_url" content="https://0xwhisperer.github.io/soulslams/SSOG.jpg">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Soul Slams by D. Votino — Honor Them While They're Still Here">
+    <meta property="og:image:alt" content="Soul, Spoken by D. Votino — Honor Them While They're Still Here">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Soul Slams by D. Votino | Honor Them While They're Still Here">
+    <meta name="twitter:title" content="Soul, Spoken by D. Votino | Honor Them While They're Still Here">
     <meta name="twitter:description" content="Professionally produced custom spoken-word tributes with music. Say the sacred thing before it's too late.">
     <meta name="twitter:image" content="https://0xwhisperer.github.io/soulslams/SSOG.jpg">
-    <meta name="twitter:image:alt" content="Soul Slams by D. Votino — Honor Them While They're Still Here">
+    <meta name="twitter:image:alt" content="Soul, Spoken by D. Votino — Honor Them While They're Still Here">
 
     <!-- iMessage / Apple -->
     <meta name="theme-color" content="#1a1428">
@@ -186,6 +186,34 @@
         .waveform-bar:nth-child(3) { animation-delay: 0.2s; }
         .waveform-bar:nth-child(4) { animation-delay: 0.3s; }
         .waveform-bar:nth-child(5) { animation-delay: 0.4s; }
+        /* iPhone SE (375x667) — small screen, reduce sizes to keep buttons in view */
+        @media (max-width: 390px) and (max-height: 680px) {
+            #hero { padding-top: 5rem !important; padding-bottom: 0.5rem !important; }
+            #hero .pill-banner { margin-top: 0; margin-bottom: 0.75rem !important; }
+            #hero h1 { font-size: 2.75rem !important; margin-bottom: 0.25rem !important; }
+            #hero h1 span { font-size: 1.5rem !important; margin-top: 0.25rem !important; }
+            #hero .gradient-text { font-size: 1.4rem !important; margin-bottom: 0.5rem !important; }
+            #hero .hero-body { font-size: 0.9rem !important; margin-bottom: 0.75rem !important; }
+        }
+        /* Galaxy S8 (360x740) */
+        @media (max-width: 370px) and (min-height: 700px) {
+            #hero .pill-banner { margin-top: 1.25rem; }
+        }
+        /* iPhone XR/14 Pro (393-414px wide, 850px+ tall) */
+        @media (min-width: 390px) and (max-width: 430px) and (min-height: 850px) {
+            #hero h1 { font-size: 4.5rem !important; }
+            #hero h1 span { font-size: 2.25rem !important; }
+            #hero .gradient-text { font-size: 2.25rem !important; }
+            #hero .hero-body { font-size: 1.25rem !important; }
+        }
+        /* Short landscape viewports (e.g. Nest Hub, landscape tablets) */
+        @media (max-height: 650px) and (min-width: 768px) {
+            #hero { padding-top: 4.5rem !important; padding-bottom: 1.5rem !important; }
+            #hero h1 { font-size: 4rem !important; margin-bottom: 0.35rem !important; }
+            #hero h1 span { font-size: 1.75rem !important; margin-top: 0.35rem !important; }
+            #hero .gradient-text { font-size: 1.75rem !important; margin-bottom: 0.75rem !important; }
+            #hero .hero-body { font-size: 1.15rem !important; margin-bottom: 1.25rem !important; }
+        }
     </style>
 </head>
 <body class="bg-soul-cream text-soul-deep font-serif antialiased text-lg md:text-xl overflow-x-hidden">
@@ -202,7 +230,7 @@
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-soul-cream/90 backdrop-blur-md border-b border-soul-gold/20" style="padding-top: env(safe-area-inset-top); padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right);">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#hero" class="font-serif text-2xl md:text-3xl lg:text-[2.25rem] italic text-soul-deep link-hover whitespace-nowrap">Soul Slams</a>
+            <a href="#hero" class="font-serif text-2xl md:text-3xl lg:text-[2.25rem] italic text-soul-deep link-hover whitespace-nowrap">Soul, Spoken</a>
             <!-- Desktop Nav -->
             <div class="hidden lg:flex gap-6 xl:gap-8 text-base lg:text-lg font-medium whitespace-nowrap">
                 <a href="#what" class="link-hover hover:text-soul-gold transition-colors">What It Is</a>
@@ -212,7 +240,7 @@
                 <a href="#pricing" class="link-hover hover:text-soul-gold transition-colors">Pricing</a>
             </div>
             <div class="flex items-center gap-4">
-                <a href="#create" class="hidden md:block bg-soul-deep text-soul-cream px-5 py-2.5 lg:px-6 lg:py-3 text-sm lg:text-lg font-medium hover:bg-soul-purple transition-colors btn-press whitespace-nowrap">Create a Soul Slam</a>
+                <a href="#create" class="hidden md:block bg-soul-deep text-soul-cream px-5 py-2.5 lg:px-6 lg:py-3 text-sm lg:text-lg font-medium hover:bg-soul-purple transition-colors btn-press whitespace-nowrap">Create A Soul, Spoken</a>
                 <!-- Mobile Menu Button -->
                 <button id="mobileMenuBtn" class="lg:hidden p-2 text-soul-deep" aria-label="Open menu">
                     <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -232,13 +260,13 @@
                 <a href="#how" class="block text-soul-deep hover:text-soul-gold transition-colors">How It Works</a>
                 <a href="#occasions" class="block text-soul-deep hover:text-soul-gold transition-colors">Occasions</a>
                 <a href="#pricing" class="block text-soul-deep hover:text-soul-gold transition-colors">Pricing</a>
-                <a href="#create" class="block bg-soul-deep text-soul-cream px-5 py-3 text-center font-medium">Create a Soul Slam</a>
+                <a href="#create" class="block bg-soul-deep text-soul-cream px-5 py-3 text-center font-medium">Create A Soul, Spoken</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero -->
-    <section id="hero" class="min-h-[100svh] flex items-center justify-center relative overflow-hidden pt-20">
+    <section id="hero" class="min-h-[100svh] flex items-center justify-center relative overflow-hidden" style="padding-top: clamp(5rem, 10vh, 7rem); padding-bottom: clamp(2rem, 4vh, 4rem)">
         <!-- Soft warm background -->
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=80" alt="" class="w-full h-full object-cover opacity-100" loading="eager">
@@ -271,20 +299,20 @@
             </div>
         </div>
         <div class="max-w-4xl mx-auto px-6 text-center z-10">
-            <div class="inline-block px-5 py-2 mt-12 mb-8 rounded-full bg-soul-deep/85 backdrop-blur-sm border border-soul-gold/40 shadow-lg shadow-soul-deep/30 max-w-full md:absolute md:top-44 lg:top-64 md:left-1/2 md:-translate-x-1/2 md:my-0 md:whitespace-nowrap">
-                <p class="text-soul-gold text-xs sm:text-sm md:text-base uppercase tracking-[0.2em] md:tracking-[0.25em] font-bold">Professionally Produced Custom Spoken-Word Tributes</p>
+            <div class="pill-banner inline-flex items-center px-5 rounded-full bg-soul-deep/85 backdrop-blur-sm border border-soul-gold/40 shadow-lg shadow-soul-deep/30 max-w-full sm:whitespace-nowrap" style="padding-top: 0.6rem; padding-bottom: 0.75rem; margin-bottom: clamp(1rem, 5vh, 3.5rem)">
+                <p class="text-soul-gold text-xs sm:text-sm md:text-base uppercase tracking-[0.2em] md:tracking-[0.25em] font-bold leading-none m-0">Professionally Produced Custom Spoken-Word Tributes</p>
             </div>
-            <h1 class="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold mb-6 leading-tight break-words">
-                Soul Slams
+            <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold mb-4 sm:mb-6 leading-tight break-words">
+                Soul, Spoken
                 <span class="block text-3xl md:text-4xl lg:text-5xl italic font-normal mt-4 text-soul-deep/80">by D. Votino</span>
             </h1>
-            <p class="font-serif text-3xl md:text-4xl lg:text-5xl italic gradient-text mb-10">Honor Them While They're Still Here</p>
-            <p class="text-xl md:text-2xl text-soul-deep/70 max-w-3xl mx-auto mb-14 leading-relaxed">
+            <p class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl italic gradient-text mb-6 sm:mb-10">Honor Them While They're Still Here</p>
+            <p class="hero-body text-lg sm:text-xl md:text-2xl text-soul-deep/70 max-w-3xl mx-auto mb-8 sm:mb-14 leading-relaxed">
                 Custom 10–15 minute spoken-word tributes with music, created to honor the life, essence, and impact of someone you love or wish to recognize  — to share with them now, and remember them with forever.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#create" class="bg-soul-deep text-soul-cream px-8 py-4 text-lg font-medium hover:bg-soul-purple transition-all transform hover:scale-105 btn-press shadow-lg shadow-soul-deep/20">
-                    Create a Soul Slam
+                    Create A Soul, Spoken
                 </a>
                 <a href="#samples" class="border-2 border-soul-deep text-soul-deep px-8 py-4 text-lg font-medium hover:bg-soul-deep hover:text-soul-cream transition-all btn-press">
                     Hear Samples
@@ -294,14 +322,14 @@
         <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-soul-cream to-transparent"></div>
     </section>
 
-    <!-- What Is a Soul Slam? -->
+    <!-- What Is a Soul, Spoken? -->
     <section id="what" class="py-24 section-fade">
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <div class="order-2 md:order-1">
-                    <h2 class="font-serif text-5xl md:text-6xl lg:text-7xl mb-10">What Is a Soul Slam?</h2>
+                    <h2 class="font-serif text-5xl md:text-6xl lg:text-7xl mb-10">What Is a Soul, Spoken?</h2>
                     <p class="text-xl md:text-2xl text-soul-deep/80 leading-relaxed mb-6">
-                        A Soul Slam is a custom spoken-word tribute set to original music, created to honor someone you love or wish to recognize or appreciate while they are still here to hear it.
+                        A Soul, Spoken is a custom spoken-word tribute set to original music, created to honor someone you love or wish to recognize or appreciate while they are still here to hear it.
                     </p>
                     <p class="text-xl md:text-2xl text-soul-deep/80 leading-relaxed mb-8">
                         It transforms memories, stories, struggles, gifts, love, and legacy into words of affirmation, encouragement, and remembrance.
@@ -330,7 +358,7 @@
         <div class="absolute inset-0 bg-gradient-to-b from-soul-deep/70 via-soul-deep/80 to-soul-deep"></div>
         <div class="max-w-5xl mx-auto px-6 relative z-10">
             <h2 class="font-serif text-5xl md:text-6xl lg:text-7xl text-center mb-6">Hear Samples</h2>
-            <p class="text-soul-cream/60 text-center mb-16 max-w-2xl mx-auto text-xl md:text-2xl">Listen to a few featured excerpts and experience the emotional range of a Soul Slam.</p>
+            <p class="text-soul-cream/60 text-center mb-16 max-w-2xl mx-auto text-xl md:text-2xl">Listen to a few featured excerpts and experience the emotional range of A Soul, Spoken.</p>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Sample 1 -->
@@ -353,7 +381,7 @@
                     </div>
                     <p class="text-soul-gold text-base mb-2">Featured Sample</p>
                     <p class="text-soul-cream/70 text-lg leading-relaxed mb-4">A warm, affirming tribute filled with love, gratitude, and encouragement.</p>
-                    <p class="text-soul-cream/50 text-base">1:12</p>
+                    <p class="text-soul-cream/50 text-base">12:08</p>
                 </div>
 
                 <!-- Sample 2 -->
@@ -432,7 +460,7 @@
     <section id="occasions" class="py-20 section-fade overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="font-serif text-5xl md:text-6xl lg:text-7xl text-center mb-6">Created for the People Who Matter</h2>
-            <p class="text-center text-soul-deep/60 mb-12 max-w-3xl mx-auto text-xl md:text-2xl leading-relaxed">From best friends and birthdays to memorials, mentors, newborns, and family legacy, Soul Slams are made for the moments when ordinary words are not enough.</p>
+            <p class="text-center text-soul-deep/60 mb-12 max-w-3xl mx-auto text-xl md:text-2xl leading-relaxed">From best friends and birthdays to memorials, mentors, newborns, and family legacy, Soul, Spoken are made for the moments when ordinary words are not enough.</p>
             
             <div class="relative">
                 <!-- Carousel Container -->
@@ -570,7 +598,7 @@
                                 </svg>
                             </div>
                             <h3 class="font-medium text-2xl mb-4">Custom Occasions</h3>
-                            <p class="text-soul-deep/60 text-lg leading-relaxed">Create a Soul Slam for any moment, person, or threshold that deserves to be honored.</p>
+                            <p class="text-soul-deep/60 text-lg leading-relaxed">Create A Soul, Spoken for any moment, person, or threshold that deserves to be honored.</p>
                         </div>
                     </div>
                 </div>
@@ -712,14 +740,14 @@
                         Is it a roast?
                         <span class="text-soul-gold group-open:rotate-180 transition-transform">▼</span>
                     </summary>
-                    <p class="px-6 pb-6 text-soul-deep/70 text-lg md:text-xl">No. A Soul Slam can be light, playful, and funny, but it is always created to honor, never to embarrass.</p>
+                    <p class="px-6 pb-6 text-soul-deep/70 text-lg md:text-xl">No. A Soul, Spoken can be light, playful, and funny, but it is always created to honor, never to embarrass.</p>
                 </details>
                 <details class="bg-white rounded-lg shadow-sm border border-soul-gold/10 group">
                     <summary class="p-6 cursor-pointer font-medium flex justify-between items-center list-none text-xl md:text-2xl">
                         Can it be for someone who has passed?
                         <span class="text-soul-gold group-open:rotate-180 transition-transform">▼</span>
                     </summary>
-                    <p class="px-6 pb-6 text-soul-deep/70 text-lg md:text-xl">Yes. Soul Slams can be created as memorials, celebrations of life, or keepsakes for families who want someone remembered in a powerful and personal way.</p>
+                    <p class="px-6 pb-6 text-soul-deep/70 text-lg md:text-xl">Yes. Soul, Spoken can be created as memorials, celebrations of life, or keepsakes for families who want someone remembered in a powerful and personal way.</p>
                 </details>
                 <details class="bg-white rounded-lg shadow-sm border border-soul-gold/10 group">
                     <summary class="p-6 cursor-pointer font-medium flex justify-between items-center list-none text-xl md:text-2xl">
@@ -758,10 +786,10 @@
                 </details>
                 <details class="bg-white rounded-lg shadow-sm border border-soul-gold/10 group">
                     <summary class="p-6 cursor-pointer font-medium flex justify-between items-center list-none text-xl md:text-2xl">
-                        How long is a Soul Slam?
+                        How long is A Soul, Spoken?
                         <span class="text-soul-gold group-open:rotate-180 transition-transform">▼</span>
                     </summary>
-                    <p class="px-6 pb-6 text-soul-deep/70 text-lg md:text-xl">Most Soul Slams are approximately 10–12 minutes, depending on the occasion, the amount of material provided, and the emotional pacing of the piece.</p>
+                    <p class="px-6 pb-6 text-soul-deep/70 text-lg md:text-xl">Most Soul, Spoken are approximately 10–12 minutes, depending on the occasion, the amount of material provided, and the emotional pacing of the piece.</p>
                 </details>
                 <details class="bg-white rounded-lg shadow-sm border border-soul-gold/10 group">
                     <summary class="p-6 cursor-pointer font-medium flex justify-between items-center list-none text-xl md:text-2xl">
@@ -782,7 +810,7 @@
                         Can it include inside jokes?
                         <span class="text-soul-gold group-open:rotate-180 transition-transform">▼</span>
                     </summary>
-                    <p class="px-6 pb-6 text-soul-deep/70 text-lg md:text-xl">Yes, as long as they are loving and understandable enough to serve the piece. Small personal details often make a Soul Slam feel deeply alive.</p>
+                    <p class="px-6 pb-6 text-soul-deep/70 text-lg md:text-xl">Yes, as long as they are loving and understandable enough to serve the piece. Small personal details often make A Soul, Spoken feel deeply alive.</p>
                 </details>
                 <details class="bg-white rounded-lg shadow-sm border border-soul-gold/10 group">
                     <summary class="p-6 cursor-pointer font-medium flex justify-between items-center list-none text-xl md:text-2xl">
@@ -807,24 +835,24 @@
                 </details>
                 <details class="bg-white rounded-lg shadow-sm border border-soul-gold/10 group">
                     <summary class="p-6 cursor-pointer font-medium flex justify-between items-center list-none text-xl md:text-2xl">
-                        What makes a Soul Slam different from a eulogy, toast, or tribute video?
+                        What makes A Soul, Spoken different from a eulogy, toast, or tribute video?
                         <span class="text-soul-gold group-open:rotate-180 transition-transform">▼</span>
                     </summary>
-                    <p class="px-6 pb-6 text-soul-deep/70 text-lg md:text-xl">A Soul Slam blends storytelling, poetry, music, and spoken-word performance into one custom tribute with words of affirmation and encouragement. It is not just a speech and not just a song. It is an honoring made to be felt.</p>
+                    <p class="px-6 pb-6 text-soul-deep/70 text-lg md:text-xl">A Soul, Spoken blends storytelling, poetry, music, and spoken-word performance into one custom tribute with words of affirmation and encouragement. It is not just a speech and not just a song. It is an honoring made to be felt.</p>
                 </details>
                 <details class="bg-white rounded-lg shadow-sm border border-soul-gold/10 group">
                     <summary class="p-6 cursor-pointer font-medium flex justify-between items-center list-none text-xl md:text-2xl">
                         Can I give it as a gift?
                         <span class="text-soul-gold group-open:rotate-180 transition-transform">▼</span>
                     </summary>
-                    <p class="px-6 pb-6 text-soul-deep/70 text-lg md:text-xl">Yes. Soul Slams make meaningful gifts for birthdays, anniversaries, retirements, memorials, family gatherings, or any moment when someone deserves to be seen and celebrated.</p>
+                    <p class="px-6 pb-6 text-soul-deep/70 text-lg md:text-xl">Yes. Soul, Spoken make meaningful gifts for birthdays, anniversaries, retirements, memorials, family gatherings, or any moment when someone deserves to be seen and celebrated.</p>
                 </details>
                 <details class="bg-white rounded-lg shadow-sm border border-soul-gold/10 group">
                     <summary class="p-6 cursor-pointer font-medium flex justify-between items-center list-none text-xl md:text-2xl">
                         Who performs the Soul Slam?
                         <span class="text-soul-gold group-open:rotate-180 transition-transform">▼</span>
                     </summary>
-                    <p class="px-6 pb-6 text-soul-deep/70 text-lg md:text-xl">At this time, Soul Slams are delivered as completed custom audio pieces performed and produced for you by D. Votino.</p>
+                    <p class="px-6 pb-6 text-soul-deep/70 text-lg md:text-xl">At this time, Soul, Spoken are delivered as completed custom audio pieces performed and produced for you by D. Votino.</p>
                 </details>
                 <details class="bg-white rounded-lg shadow-sm border border-soul-gold/10 group">
                     <summary class="p-6 cursor-pointer font-medium flex justify-between items-center list-none text-xl md:text-2xl">
@@ -857,7 +885,7 @@
             </p>
             <div class="mt-12">
                 <a href="contact.html" class="inline-block bg-soul-gold text-soul-deep px-10 py-5 text-xl font-medium hover:bg-soul-accent transition-all transform hover:scale-105">
-                    Create a Soul Slam
+                    Create A Soul, Spoken
                 </a>
             </div>
         </div>
@@ -868,13 +896,13 @@
         <div class="max-w-5xl mx-auto px-6">
             <div class="grid md:grid-cols-3 gap-12 mb-12">
                 <div>
-                    <h3 class="font-serif text-2xl text-soul-gold mb-4">Soul Slams</h3>
+                    <h3 class="font-serif text-2xl text-soul-gold mb-4">Soul, Spoken</h3>
                     <p class="text-lg leading-relaxed">Custom spoken-word tributes with original music. Honor Them While They're Still Here.</p>
                 </div>
                 <div>
                     <h3 class="font-serif text-2xl text-soul-gold mb-4">Explore</h3>
                     <ul class="space-y-2 text-lg">
-                        <li><a href="#what" class="hover:text-soul-gold transition-colors">What Is a Soul Slam</a></li>
+                        <li><a href="#what" class="hover:text-soul-gold transition-colors">What Is a Soul, Spoken</a></li>
                         <li><a href="#samples" class="hover:text-soul-gold transition-colors">Hear Samples</a></li>
                         <li><a href="#how" class="hover:text-soul-gold transition-colors">How It Works</a></li>
                         <li><a href="#pricing" class="hover:text-soul-gold transition-colors">Packages</a></li>
@@ -887,12 +915,12 @@
                 </div>
             </div>
             <div class="border-t border-soul-gold/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <div class="font-serif text-xl italic text-soul-cream">Soul Slams by D. Votino</div>
+                <div class="font-serif text-xl italic text-soul-cream">Soul, Spoken by D. Votino</div>
                 <div class="text-base">
                     Honor Them While They're Still Here
                 </div>
                 <div class="text-base text-soul-cream/40">
-                    © 2026 Soul Slams. All rights reserved.
+                    © 2026 Soul, Spoken. All rights reserved.
                 </div>
             </div>
         </div>
@@ -1061,6 +1089,7 @@
         let lastClickTime = {};
 
         const sampleAudio = {
+            tender: 'Shalom.m4a',
             sacred: 'Memra.mp3',
             faith: 'Kevin.mp3'
         };
