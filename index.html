@@ -546,11 +546,19 @@
             </div>
             
             <!-- Dots Indicator -->
-            <div class="flex justify-center gap-3 mt-8">
+            <div class="flex justify-center gap-3 mt-8 flex-wrap">
                 <button class="carousel-dot w-3 h-3 rounded-full bg-soul-gold transition-all" data-slide="0"></button>
                 <button class="carousel-dot w-3 h-3 rounded-full bg-soul-gold/30 transition-all" data-slide="1"></button>
                 <button class="carousel-dot w-3 h-3 rounded-full bg-soul-gold/30 transition-all" data-slide="2"></button>
                 <button class="carousel-dot w-3 h-3 rounded-full bg-soul-gold/30 transition-all" data-slide="3"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-soul-gold/30 transition-all" data-slide="4"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-soul-gold/30 transition-all" data-slide="5"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-soul-gold/30 transition-all" data-slide="6"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-soul-gold/30 transition-all" data-slide="7"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-soul-gold/30 transition-all" data-slide="8"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-soul-gold/30 transition-all" data-slide="9"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-soul-gold/30 transition-all" data-slide="10"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-soul-gold/30 transition-all" data-slide="11"></button>
             </div>
         </div>
     </section>
@@ -868,20 +876,33 @@
         const nextBtn = document.getElementById('nextBtn');
         const dots = document.querySelectorAll('.carousel-dot');
         let currentSlide = 0;
-        const totalSlides = 4;
+        
+        function getTotalSlides() {
+            const cards = carousel.querySelectorAll('.flex-shrink-0');
+            const isMobile = window.innerWidth < 768;
+            return isMobile ? cards.length : Math.ceil(cards.length / 3);
+        }
+        
+        let totalSlides = getTotalSlides();
 
         function updateCarousel() {
             const isMobile = window.innerWidth < 768;
             const slideWidth = isMobile ? 100 : 33.333;
             carousel.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
             
+            // Update dots visibility
             dots.forEach((dot, index) => {
-                if (index === currentSlide) {
-                    dot.classList.remove('bg-soul-gold/30');
-                    dot.classList.add('bg-soul-gold');
+                if (index < totalSlides) {
+                    dot.style.display = 'block';
+                    if (index === currentSlide) {
+                        dot.classList.remove('bg-soul-gold/30');
+                        dot.classList.add('bg-soul-gold');
+                    } else {
+                        dot.classList.remove('bg-soul-gold');
+                        dot.classList.add('bg-soul-gold/30');
+                    }
                 } else {
-                    dot.classList.remove('bg-soul-gold');
-                    dot.classList.add('bg-soul-gold/30');
+                    dot.style.display = 'none';
                 }
             });
         }
@@ -903,7 +924,11 @@
             });
         });
 
-        window.addEventListener('resize', updateCarousel);
+        window.addEventListener('resize', () => {
+            totalSlides = getTotalSlides();
+            currentSlide = 0;
+            updateCarousel();
+        });
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
