@@ -362,98 +362,119 @@
             <h2 class="font-serif text-5xl md:text-6xl lg:text-7xl text-center mb-6">Hear Samples</h2>
             <p class="text-soul-cream/60 text-center mb-16 max-w-2xl mx-auto text-xl md:text-2xl">Listen to a few featured excerpts and experience the emotional range of A Soul Spoken.</p>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Sample 1 -->
-                <div class="bg-soul-purple/50 p-8 rounded-lg border border-soul-gold/20 hover:border-soul-gold/40 transition-all cursor-pointer group" onclick="playSample(this, 'tender')" title="Double-click to restart">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 min-w-[3.5rem] rounded-full bg-soul-gold/20 flex items-center justify-center group-hover:bg-soul-gold/30 transition-all flex-shrink-0">
-                            <svg class="w-6 h-6 text-soul-gold play-icon" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M6.3 5.84a.5.5 0 0 1 .77-.42l7.56 4.16a.5.5 0 0 1 0 .84L7.07 14.58a.5.5 0 0 1-.77-.42V5.84z"/>
-                            </svg>
-                            <div class="equalizer hidden flex gap-1 h-5 items-end">
-                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0s; height: 40%"></div>
-                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.1s; height: 70%"></div>
-                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.2s; height: 50%"></div>
-                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.3s; height: 80%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="font-medium text-2xl">Tender & Uplifting</h3>
-                        </div>
-                    </div>
-                    <p class="text-soul-gold text-base mb-2">Featured Sample</p>
-                    <p class="text-soul-cream/70 text-lg leading-relaxed mb-4">A warm, affirming tribute filled with love, gratitude, and encouragement.</p>
-                    <p class="text-soul-cream/50 text-base">12:08</p>
-                </div>
+            <!-- Carousel -->
+            <div class="relative">
+                <!-- Prev button -->
+                <button id="carouselPrev" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 w-10 h-10 rounded-full bg-soul-gold/20 hover:bg-soul-gold/40 text-soul-gold flex items-center justify-center transition-all" aria-label="Previous">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <!-- Next button -->
+                <button id="carouselNext" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 w-10 h-10 rounded-full bg-soul-gold/20 hover:bg-soul-gold/40 text-soul-gold flex items-center justify-center transition-all" aria-label="Next">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+                <!-- Track -->
+                <div id="carouselTrack" class="overflow-hidden">
+                    <div id="carouselInner" class="flex transition-transform duration-500 ease-in-out gap-6">
 
-                <!-- Sample 2 -->
-                <div class="bg-soul-purple/50 p-8 rounded-lg border border-soul-gold/20 hover:border-soul-gold/40 transition-all cursor-pointer group" onclick="playSample(this, 'sacred')" title="Double-click to restart">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 min-w-[3.5rem] rounded-full bg-soul-gold/20 flex items-center justify-center group-hover:bg-soul-gold/30 transition-all flex-shrink-0">
-                            <svg class="w-6 h-6 text-soul-gold play-icon" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M6.3 5.84a.5.5 0 0 1 .77-.42l7.56 4.16a.5.5 0 0 1 0 .84L7.07 14.58a.5.5 0 0 1-.77-.42V5.84z"/>
-                            </svg>
-                            <div class="equalizer hidden flex gap-1 h-5 items-end">
-                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0s; height: 40%"></div>
-                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.1s; height: 70%"></div>
-                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.2s; height: 50%"></div>
-                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.3s; height: 80%"></div>
+                        <!-- Sample 1 - Shalom -->
+                        <div class="bg-soul-purple/50 p-8 rounded-lg border border-soul-gold/20 hover:border-soul-gold/40 transition-all cursor-pointer group carousel-card flex-shrink-0" onclick="playSample(this, 'tender')" title="Double-click to restart">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-14 h-14 min-w-[3.5rem] rounded-full bg-soul-gold/20 flex items-center justify-center group-hover:bg-soul-gold/30 transition-all flex-shrink-0">
+                                    <svg class="w-6 h-6 text-soul-gold play-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 5.84a.5.5 0 0 1 .77-.42l7.56 4.16a.5.5 0 0 1 0 .84L7.07 14.58a.5.5 0 0 1-.77-.42V5.84z"/></svg>
+                                    <div class="equalizer hidden flex gap-1 h-5 items-end">
+                                        <div class="w-1 bg-soul-gold audio-bar" style="animation-delay:0s;height:40%"></div>
+                                        <div class="w-1 bg-soul-gold audio-bar" style="animation-delay:0.1s;height:70%"></div>
+                                        <div class="w-1 bg-soul-gold audio-bar" style="animation-delay:0.2s;height:50%"></div>
+                                        <div class="w-1 bg-soul-gold audio-bar" style="animation-delay:0.3s;height:80%"></div>
+                                    </div>
+                                </div>
+                                <h3 class="font-medium text-2xl">Quiet & Luminous</h3>
                             </div>
+                            <p class="text-soul-gold text-base mb-2">Featured Sample: Shalom</p>
+                            <p class="text-soul-cream/70 text-lg leading-relaxed mb-4">A gentle, affirming tribute for the one whose presence guides the room without ever needing to be loud.</p>
+                            <p class="text-soul-cream/50 text-base">12:08</p>
                         </div>
-                        <div>
-                            <h3 class="font-medium text-2xl">Sacred & Reflective</h3>
-                        </div>
-                    </div>
-                    <p class="text-soul-gold text-base mb-2">Featured Sample</p>
-                    <p class="text-soul-cream/70 text-lg leading-relaxed mb-4">A reverent and contemplative piece shaped by remembrance, tenderness, and quiet beauty.</p>
-                    <p class="text-soul-cream/50 text-base">12:42</p>
-                </div>
 
-                <!-- Sample 3 -->
-                <div class="bg-soul-purple/50 p-8 rounded-lg border border-soul-gold/20 hover:border-soul-gold/40 transition-all cursor-pointer group" onclick="playSample(this, 'warm')" title="Double-click to restart">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 min-w-[3.5rem] rounded-full bg-soul-gold/20 flex items-center justify-center group-hover:bg-soul-gold/30 transition-all flex-shrink-0">
-                            <svg class="w-6 h-6 text-soul-gold play-icon" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M6.3 5.84a.5.5 0 0 1 .77-.42l7.56 4.16a.5.5 0 0 1 0 .84L7.07 14.58a.5.5 0 0 1-.77-.42V5.84z"/>
-                            </svg>
-                            <div class="equalizer hidden flex gap-1 h-5 items-end">
-                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0s; height: 40%"></div>
-                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.1s; height: 70%"></div>
-                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.2s; height: 50%"></div>
-                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.3s; height: 80%"></div>
+                        <!-- Sample 2 - Joe -->
+                        <div class="bg-soul-purple/50 p-8 rounded-lg border border-soul-gold/20 hover:border-soul-gold/40 transition-all cursor-pointer group carousel-card flex-shrink-0" onclick="playSample(this, 'joe')" title="Double-click to restart">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-14 h-14 min-w-[3.5rem] rounded-full bg-soul-gold/20 flex items-center justify-center group-hover:bg-soul-gold/30 transition-all flex-shrink-0">
+                                    <svg class="w-6 h-6 text-soul-gold play-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 5.84a.5.5 0 0 1 .77-.42l7.56 4.16a.5.5 0 0 1 0 .84L7.07 14.58a.5.5 0 0 1-.77-.42V5.84z"/></svg>
+                                    <div class="equalizer hidden flex gap-1 h-5 items-end">
+                                        <div class="w-1 bg-soul-gold audio-bar" style="animation-delay:0s;height:40%"></div>
+                                        <div class="w-1 bg-soul-gold audio-bar" style="animation-delay:0.1s;height:70%"></div>
+                                        <div class="w-1 bg-soul-gold audio-bar" style="animation-delay:0.2s;height:50%"></div>
+                                        <div class="w-1 bg-soul-gold audio-bar" style="animation-delay:0.3s;height:80%"></div>
+                                    </div>
+                                </div>
+                                <h3 class="font-medium text-2xl">Wise & Steady</h3>
                             </div>
+                            <p class="text-soul-gold text-base mb-2">Featured Sample: Joe</p>
+                            <p class="text-soul-cream/70 text-lg leading-relaxed mb-4">A grounded tribute honoring service, friendship, dignity, and the quiet wisdom of a life spent showing up.</p>
+                            <p class="text-soul-cream/50 text-base">18:00</p>
                         </div>
-                        <div>
-                            <h3 class="font-medium text-2xl">Warm & Personal</h3>
-                        </div>
-                    </div>
-                    <p class="text-soul-gold text-base mb-2">Featured Sample</p>
-                    <p class="text-soul-cream/70 text-lg leading-relaxed mb-4">An intimate spoken-word tribute woven from meaningful details, affection, and heartfelt presence.</p>
-                    <p class="text-soul-cream/50 text-base">1:08</p>
-                </div>
 
-                <!-- Sample 4 -->
-                <div class="bg-soul-purple/50 p-8 rounded-lg border border-soul-gold/20 hover:border-soul-gold/40 transition-all cursor-pointer group" onclick="playSample(this, 'faith')" title="Double-click to restart">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 min-w-[3.5rem] rounded-full bg-soul-gold/20 flex items-center justify-center group-hover:bg-soul-gold/30 transition-all flex-shrink-0">
-                            <svg class="w-6 h-6 text-soul-gold play-icon" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M6.3 5.84a.5.5 0 0 1 .77-.42l7.56 4.16a.5.5 0 0 1 0 .84L7.07 14.58a.5.5 0 0 1-.77-.42V5.84z"/>
-                            </svg>
-                            <div class="equalizer hidden flex gap-1 h-5 items-end">
-                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0s; height: 40%"></div>
-                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.1s; height: 70%"></div>
-                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.2s; height: 50%"></div>
-                                <div class="w-1 bg-soul-gold audio-bar" style="animation-delay: 0.3s; height: 80%"></div>
+                        <!-- Sample 3 - Memra -->
+                        <div class="bg-soul-purple/50 p-8 rounded-lg border border-soul-gold/20 hover:border-soul-gold/40 transition-all cursor-pointer group carousel-card flex-shrink-0" onclick="playSample(this, 'sacred')" title="Double-click to restart">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-14 h-14 min-w-[3.5rem] rounded-full bg-soul-gold/20 flex items-center justify-center group-hover:bg-soul-gold/30 transition-all flex-shrink-0">
+                                    <svg class="w-6 h-6 text-soul-gold play-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 5.84a.5.5 0 0 1 .77-.42l7.56 4.16a.5.5 0 0 1 0 .84L7.07 14.58a.5.5 0 0 1-.77-.42V5.84z"/></svg>
+                                    <div class="equalizer hidden flex gap-1 h-5 items-end">
+                                        <div class="w-1 bg-soul-gold audio-bar" style="animation-delay:0s;height:40%"></div>
+                                        <div class="w-1 bg-soul-gold audio-bar" style="animation-delay:0.1s;height:70%"></div>
+                                        <div class="w-1 bg-soul-gold audio-bar" style="animation-delay:0.2s;height:50%"></div>
+                                        <div class="w-1 bg-soul-gold audio-bar" style="animation-delay:0.3s;height:80%"></div>
+                                    </div>
+                                </div>
+                                <h3 class="font-medium text-2xl">Sacred & Resilient</h3>
                             </div>
+                            <p class="text-soul-gold text-base mb-2">Featured Sample: Memra</p>
+                            <p class="text-soul-cream/70 text-lg leading-relaxed mb-4">A reverent tribute shaped by endurance, remembrance, and the light that survives every season of sorrow.</p>
+                            <p class="text-soul-cream/50 text-base">12:42</p>
                         </div>
-                        <div>
-                            <h3 class="font-medium text-2xl">Faith & Devotion</h3>
+
+                        <!-- Sample 4 - Space Jimmy -->
+                        <div class="bg-soul-purple/50 p-8 rounded-lg border border-soul-gold/20 hover:border-soul-gold/40 transition-all cursor-pointer group carousel-card flex-shrink-0" onclick="playSample(this, 'warm')" title="Double-click to restart">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-14 h-14 min-w-[3.5rem] rounded-full bg-soul-gold/20 flex items-center justify-center group-hover:bg-soul-gold/30 transition-all flex-shrink-0">
+                                    <svg class="w-6 h-6 text-soul-gold play-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 5.84a.5.5 0 0 1 .77-.42l7.56 4.16a.5.5 0 0 1 0 .84L7.07 14.58a.5.5 0 0 1-.77-.42V5.84z"/></svg>
+                                    <div class="equalizer hidden flex gap-1 h-5 items-end">
+                                        <div class="w-1 bg-soul-gold audio-bar" style="animation-delay:0s;height:40%"></div>
+                                        <div class="w-1 bg-soul-gold audio-bar" style="animation-delay:0.1s;height:70%"></div>
+                                        <div class="w-1 bg-soul-gold audio-bar" style="animation-delay:0.2s;height:50%"></div>
+                                        <div class="w-1 bg-soul-gold audio-bar" style="animation-delay:0.3s;height:80%"></div>
+                                    </div>
+                                </div>
+                                <h3 class="font-medium text-2xl">Cosmic & Free</h3>
+                            </div>
+                            <p class="text-soul-gold text-base mb-2">Featured Sample: Jimmy</p>
+                            <p class="text-soul-cream/70 text-lg leading-relaxed mb-4">A light-filled tribute for the soul who reminds others to breathe, let go, and remember what they are.</p>
+                            <p class="text-soul-cream/50 text-base">5:40</p>
                         </div>
+
+                        <!-- Sample 5 - Kevin -->
+                        <div class="bg-soul-purple/50 p-8 rounded-lg border border-soul-gold/20 hover:border-soul-gold/40 transition-all cursor-pointer group carousel-card flex-shrink-0" onclick="playSample(this, 'faith')" title="Double-click to restart">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-14 h-14 min-w-[3.5rem] rounded-full bg-soul-gold/20 flex items-center justify-center group-hover:bg-soul-gold/30 transition-all flex-shrink-0">
+                                    <svg class="w-6 h-6 text-soul-gold play-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 5.84a.5.5 0 0 1 .77-.42l7.56 4.16a.5.5 0 0 1 0 .84L7.07 14.58a.5.5 0 0 1-.77-.42V5.84z"/></svg>
+                                    <div class="equalizer hidden flex gap-1 h-5 items-end">
+                                        <div class="w-1 bg-soul-gold audio-bar" style="animation-delay:0s;height:40%"></div>
+                                        <div class="w-1 bg-soul-gold audio-bar" style="animation-delay:0.1s;height:70%"></div>
+                                        <div class="w-1 bg-soul-gold audio-bar" style="animation-delay:0.2s;height:50%"></div>
+                                        <div class="w-1 bg-soul-gold audio-bar" style="animation-delay:0.3s;height:80%"></div>
+                                    </div>
+                                </div>
+                                <h3 class="font-medium text-2xl">Faith & Devotion</h3>
+                            </div>
+                            <p class="text-soul-gold text-base mb-2">Featured Sample: Kevin</p>
+                            <p class="text-soul-cream/70 text-lg leading-relaxed mb-4">A reverent spoken-word tribute shaped by faith, mercy, music, and a life turned steadily toward God.</p>
+                            <p class="text-soul-cream/50 text-base">10:38</p>
+                        </div>
+
                     </div>
-                    <p class="text-soul-gold text-base mb-2">Featured Sample</p>
-                    <p class="text-soul-cream/70 text-lg leading-relaxed mb-4">A reverent spoken-word tribute shaped by faith, gratitude, and the quiet strength of a life guided by something greater.</p>
-                    <p class="text-soul-cream/50 text-base">10:38</p>
                 </div>
+                <!-- Dots -->
+                <div id="carouselDots" class="flex justify-center gap-2 mt-8"></div>
             </div>
             <blockquote class="text-center mt-16 max-w-3xl mx-auto">
                 <p class="font-serif text-3xl md:text-4xl lg:text-5xl italic text-soul-gold/80 leading-relaxed">"All your past except its beauty is gone,<br>and nothing is left but a blessing."</p>
@@ -1121,6 +1142,77 @@
             observer.observe(section);
         });
 
+        // Carousel
+        (function() {
+            const inner = document.getElementById('carouselInner');
+            const track = document.getElementById('carouselTrack');
+            const prevBtn = document.getElementById('carouselPrev');
+            const nextBtn = document.getElementById('carouselNext');
+            const dotsContainer = document.getElementById('carouselDots');
+            const cards = Array.from(inner.querySelectorAll('.carousel-card'));
+            let current = 0;
+
+            function visibleCount() {
+                const w = window.innerWidth;
+                if (w >= 1024) return 3;
+                if (w >= 640) return 2;
+                return 1;
+            }
+
+            function cardWidth() {
+                const gap = 24;
+                const vc = visibleCount();
+                return (track.offsetWidth - gap * (vc - 1)) / vc;
+            }
+
+            function maxIndex() {
+                return Math.max(0, cards.length - visibleCount());
+            }
+
+            function setCardWidths() {
+                const w = cardWidth();
+                cards.forEach(c => { c.style.width = w + 'px'; });
+            }
+
+            function buildDots() {
+                dotsContainer.innerHTML = '';
+                const total = maxIndex() + 1;
+                for (let i = 0; i < total; i++) {
+                    const d = document.createElement('button');
+                    d.className = 'w-2 h-2 rounded-full transition-all ' + (i === current ? 'bg-soul-gold w-4' : 'bg-soul-gold/30');
+                    d.addEventListener('click', () => goTo(i));
+                    dotsContainer.appendChild(d);
+                }
+            }
+
+            function updateDots() {
+                Array.from(dotsContainer.children).forEach((d, i) => {
+                    d.className = 'w-2 h-2 rounded-full transition-all ' + (i === current ? 'bg-soul-gold' : 'bg-soul-gold/30');
+                    d.style.width = i === current ? '1rem' : '';
+                });
+            }
+
+            function goTo(idx) {
+                current = Math.max(0, Math.min(idx, maxIndex()));
+                const offset = current * (cardWidth() + 24);
+                inner.style.transform = 'translateX(-' + offset + 'px)';
+                prevBtn.style.opacity = current === 0 ? '0.3' : '1';
+                nextBtn.style.opacity = current >= maxIndex() ? '0.3' : '1';
+                updateDots();
+            }
+
+            function init() {
+                setCardWidths();
+                buildDots();
+                goTo(0);
+            }
+
+            prevBtn.addEventListener('click', () => goTo(current - 1));
+            nextBtn.addEventListener('click', () => goTo(current + 1));
+            window.addEventListener('resize', init);
+            init();
+        })();
+
         // Audio sample player
         let currentlyPlaying = null;
         let currentType = null;
@@ -1129,8 +1221,9 @@
         let lastClickTime = {};
 
         const sampleAudio = {
-            tender: 'Shalom.m4a',
+            tender: 'Shalom.mp3',
             sacred: 'Memra.mp3',
+            joe: 'Joe.mp3',
             warm: 'SpaceJimmy.mp3',
             faith: 'Kevin.mp3'
         };
